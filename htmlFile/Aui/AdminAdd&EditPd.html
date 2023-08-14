@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="your-style-file.css" />
+    <!-- Replace with your actual CSS file name -->
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-logo">
+        <img src="logo.png" alt="Logo" />
+        <h1>DII MUSIC</h1>
+      </div>
+      <div class="navbar-search">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="navbar-links">
+        <a href="AdminPd.html" class="navbar-link">Home</a>
+        <a href="#" class="navbar-link">Admin</a>
+      </div>
+    </header>
+
+    <h1>Add New Product</h1>
+
+    <form action="process-form.php" method="post" enctype="multipart/form-data">
+      <input
+        type="file"
+        id="product-image"
+        name="product-image"
+        accept="image/*"
+        class="file-input"
+        required
+      />
+      <label for="product-image" class="file-label">
+        <div class="file-box">
+          <span class="plus-icon">+</span>
+        </div>
+      </label>
+      <label for="product-name">Product Name:</label>
+      <input type="text" id="product-name" name="product-name" required />
+
+      <label for="product-category">Product Category:</label>
+      <input
+        type="text"
+        id="product-category"
+        name="product-category"
+        required
+      />
+
+      <label for="product-sound">Product Sound (MP3):</label>
+      <input
+        type="file"
+        id="product-sound"
+        name="product-sound"
+        accept="audio/mp3"
+        required
+      />
+
+      <label for="product-description">Product Description:</label>
+      <textarea
+        id="product-description"
+        name="product-description"
+        required
+      ></textarea>
+      <button type="button" onclick="window.location.href='AdminPd.html'">
+        Cancel
+      </button>
+
+      <button type="submit">Add Product</button>
+    </form>
+    <footer class="footer">
+      &copy; 2023 Your Website. All rights reserved.
+    </footer>
+  </body>
+</html>
