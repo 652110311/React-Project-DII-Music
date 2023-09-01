@@ -19,6 +19,7 @@ const userData = [
             quantity: 2,
           },
         ],
+        pic:"",
         productStatus: "TO PAY",
         totalPrice: 0,
       },
