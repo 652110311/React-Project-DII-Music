@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Admin from "./features/Admin";
 function App() {
@@ -5,6 +6,20 @@ function App() {
     <>
       <Admin />
     </>
+=======
+import React from 'react';
+import Home from './features/home';
+
+
+
+function App() {
+  return (
+    <div>
+
+     <Home/>
+      
+    </div>
+>>>>>>> 9415bacff23782e3ec5db93cc334a4876bb45874
   );
 }
 
