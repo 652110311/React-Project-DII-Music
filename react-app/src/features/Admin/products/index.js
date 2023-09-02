@@ -174,7 +174,7 @@ export default styled(Product)`
     border-right: 1px solid #edf1ff;
     flex: 1 1 auto;
     min-height: 1px;
-  }
+  e}
 
   .text-truncate {
     overflow: hidden;
