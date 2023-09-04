@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 // let currentProductId = 45;
-function Home({ selectedOption, products, className }) {
+function HomeAdmin({ selectedOption, products, className }) {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // Use the useEffect hook to filter products when selectedOption or products change
@@ -29,7 +29,7 @@ function Home({ selectedOption, products, className }) {
           <span className="px-2"> Products </span>
         </h2>
       </div>
-      <Link to="/add-product" className="add-label">
+      <Link to="/Admin/add-product" className="add-label">
         <div className="add-box">
           <span className="plus-icon">+</span>
         </div>
@@ -43,11 +43,11 @@ function Home({ selectedOption, products, className }) {
   );
 }
 
-Home.propTypes = {
+HomeAdmin.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-export default styled(Home)`
+export default styled(HomeAdmin)`
   padding-top: 3rem;
   width: 90%;
   padding-right: 15px;

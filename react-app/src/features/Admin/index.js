@@ -11,6 +11,7 @@ import UpdateForm from "./products/UpdateForm";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "./products/actions";
 import GlobalStyle from "./GlobalStyle";
+
 function Admin() {
   const options = [
     { value: "all", label: "All" },
@@ -53,6 +54,7 @@ function Admin() {
 
   return (
     <>
+  
       <GlobalStyle />
       <Navbar />
       <Dropdown options={options} onSelect={handleOptionSelect} />
@@ -65,10 +67,7 @@ function Admin() {
               element={<AddForm addProduct={products} />}
             />
             <Route path="/update-product/:id" element={<UpdateForm />} />
-            <Route
-              path="/"
-              element={<Home products={products} selectedOption={null} />}
-            />
+           
             <Route
               path="/All"
               element={
@@ -110,6 +109,7 @@ function Admin() {
           <div>Loading products....</div>
         )}
       </Container>
+    
     </>
   );
 }

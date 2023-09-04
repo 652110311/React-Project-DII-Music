@@ -21,7 +21,7 @@ function Product({ item, className }) {
   const navigate = useNavigate();
   const onDelete = () => {
     dispatch(deleteProduct({ id: product.id }));
-    navigate("/");
+    navigate("/Admin/All");
   };
 
   return (
@@ -41,8 +41,8 @@ function Product({ item, className }) {
             </div>
           </div>
           <div class="card-footer">
-            <Link to={`/update-product/${item.id}`} className="btn edit-button">
-              <button></button>
+            <Link to={`/Admin/update-product/${item.id}`} className="btn edit-button">
+             
               <i class="fas fa-edit text-primary mr-1"></i>
               Edit
             </Link>

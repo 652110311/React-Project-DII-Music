@@ -30,7 +30,7 @@ function UpdateForm() {
         description,
       })
     );
-    navigate("/");
+    navigate("/Admin/a");
   };
 
   function handleImageChange(event) {

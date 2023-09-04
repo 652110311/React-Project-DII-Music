@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 function Navbar({ className }) {
   return (
     <>
@@ -97,10 +98,10 @@ function Navbar({ className }) {
               <i class="fas fa-user"></i>
               <span class="badge">Admin</span>
             </a>
-            <a href="" class="icon-out">
+            <Link to="/" class="icon-out">
               <i className="fas fa-sign-out-alt"></i>
               <span class="badge"></span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

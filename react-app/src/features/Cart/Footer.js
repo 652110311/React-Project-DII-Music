@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-function Footer({ orderId, total, checkOut, className }) {
-  function checkOutOrder() {
-    checkOut(orderId);
-  }
+function Footer({ orderId,total, className }) {
+
 
   return (
     <>
@@ -15,7 +14,7 @@ function Footer({ orderId, total, checkOut, className }) {
             <div className="content-r">
               <div>TOTAL&nbsp;&nbsp;&nbsp;&nbsp;${total}</div>
               <div>
-                <button onClick={checkOutOrder}>CHECKOUT</button>
+                <button><Link to="/address">CHECKOUT</Link></button>
               </div>
             </div>
           </div>
@@ -24,6 +23,7 @@ function Footer({ orderId, total, checkOut, className }) {
     </>
   );
 }
+
 
 export default styled(Footer)`
   * {

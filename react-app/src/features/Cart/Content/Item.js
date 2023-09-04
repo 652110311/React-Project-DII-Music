@@ -1,27 +1,34 @@
 import React, { Fragment, useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
 
-function Item({userId,addminId,orderId,item,status,editCart,deleteCart,className,products}) {
+function Item({userId,addminId,orderId,item,status,editCart,deleteCart,products,total,className}) {
 
   const product = products.find(product => product.id === item.productId);
-  const productImage = require(`../../../assets/${product.imageURL[0]}`);
+  const productImage = require(`../../../assets/${product.imageURL}`);
   const [quantity, setQuantity] = useState(item.quantity);
   
   const addQuantity = () => {
+    const newTotal = total+product.price;
+    console.log("ttt")
+    console.log(product.price)
+    console.log(total)
+    console.log(newTotal);
     setQuantity(quantity + 1);
-    editCart(orderId,item.productId,quantity+1)
+    editCart(item.productId,quantity+1,newTotal)
   };
 
   function deleteItem (){
-    deleteCart(orderId,item.productId)
+    const newTotal = total-product.price;
+    deleteCart(orderId,item.productId,newTotal)
   }
 
   const deleteQuantity = () => {
+    const newTotal = total-product.price;
     if (quantity > 1) {
       setQuantity(quantity - 1);
-      editCart(orderId,item.productId,quantity-1)
+      editCart(item.productId,quantity-1,newTotal)
     }else{
-      deleteCart(orderId,item.productId)
+      deleteCart(orderId,item.productId,newTotal)
     }
   };
 

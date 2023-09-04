@@ -5,7 +5,7 @@ import Tracking from "./Tracking";
 import AddminBtn from "./addmin/AddminBtn";
 import styled from "styled-components";
 
-function Order({userId,addminId,orderId,order,status,editCart,deleteCart,products,confirmOrder,addTrack,className}) {
+function Order({user,userId,addminId,orderId,order,status,editCart,deleteCart,products,confirmOrder,addTrack,total,className}) {
 
   return (
     <>
@@ -14,21 +14,21 @@ function Order({userId,addminId,orderId,order,status,editCart,deleteCart,product
 
       <ul className="order-list">
         {order.order.map((item) => (
-          <Item key={item.productId} userId={userId} addminId={addminId} orderId={orderId} item={item} status={status} editCart={editCart} deleteCart={deleteCart} products={products} />
+          <Item key={item.productId} userId={userId} addminId={addminId} orderId={orderId} item={item} status={status} editCart={editCart} deleteCart={deleteCart} products={products} total={total} />
         ))}
      
         {
-          userId===addminId?(
+          userId==addminId?(
             <>
               <SumTotal total={order.totalPrice}/>
-              <AddminBtn userIdd={order.userId} orderId={order.orderId} status={status} transport={order.transport} track={order.track} confirmOrder={confirmOrder} addTrack={addTrack}/>
+              <AddminBtn user={user} userIdd={order.userId} orderId={order.orderId} status={status} transport={order.transport} track={order.track} confirmOrder={confirmOrder} addTrack={addTrack}/>
             </>
           ):status!=="TO PAY" && userId!==addminId?(
             <SumTotal total={order.totalPrice}/>
 
-          ):status==="TO RECEIVE" && userId!==addminId?(
+          ):status==="TO RECEIVE"?(
             <Tracking orderId={orderId} transport={order.transport} track={order.track}  />
-          ):null
+          ) : null
         }
       </ul>
 

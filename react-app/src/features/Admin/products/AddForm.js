@@ -18,7 +18,7 @@ function AddForm() {
   function onSubmit(event) {
     event.preventDefault();
     dispatch(addProduct({ name, type, imageURL, sound, description }));
-    navigate("/");
+    navigate("/Admin/All");
     console.log("added");
   }
 
@@ -89,7 +89,7 @@ function AddForm() {
           onChange={(event) => setDescription(event.target.value)}
         ></textarea>
 
-        <Link to="/" className="btn cancel">
+        <Link to="/Admin" className="btn cancel">
           Cancel
         </Link>
 

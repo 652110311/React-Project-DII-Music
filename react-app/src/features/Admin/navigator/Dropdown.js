@@ -5,7 +5,7 @@ import axios from "axios";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 const Dropdown = ({ options, onSelect, className }) => {
-  const homeImage = require(`../../../assets/home.png`);
+  const homeImage = require(`../../../assets/1.png`);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -45,7 +45,7 @@ const Dropdown = ({ options, onSelect, className }) => {
             <div className="dropdown-menu">
               {options.map((option) => (
                 <Link
-                  to={`/${option.label}`}
+                  to={`/Admin/${option.label}`}
                   class="nav-item nav-link"
                   key={option.value}
                   onClick={() => handleOptionClick(option)}
@@ -60,7 +60,7 @@ const Dropdown = ({ options, onSelect, className }) => {
         <div class="container-show">
           <nav class="menu">
             <div class="menu-list">
-              <Link to="/" class="nav-item nav-link active">
+              <Link to="/Admin" class="nav-item nav-link active">
                 Home
               </Link>
               <Link to="/sales" class="nav-item nav-link">
@@ -82,7 +82,7 @@ const Dropdown = ({ options, onSelect, className }) => {
                 {isOpenConfirm && (
                   <div className="dropdown-menu-confirm">
                     <Link
-                      to=""
+                      to="/ToPay"
                       class="nav-link-confirm"
                       key={"Payment"}
                       onClick={() => handleOptionClickConfirm("Payment")}
@@ -90,7 +90,7 @@ const Dropdown = ({ options, onSelect, className }) => {
                       {"Payment"}
                     </Link>
                     <Link
-                      to=""
+                      to="/ToShip"
                       class="nav-link-confirm"
                       key={"Shipping"}
                       onClick={() => handleOptionClickConfirm("Shipping")}
